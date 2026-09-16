@@ -3,107 +3,267 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>StudentHub - Events</title>
     <link rel="stylesheet" href="../Css/events.css">
+    <script src="../Java Script/events.js" defer></script>
 </head>
+
 <body>
 
-    <header>
+<header>
+    <center>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_msVTJ1UZqmtO-rMykxXBRws_5_EmYQxh7ZsTVTWeQoeh8BjRmlV7sLk&s=10"
+             alt="StudentHub Logo">
 
-<center>
+        <h1>StudentHub Portal</h1>
+        <p><b>Empowering Students Through Technology</b></p>
+    </center>
 
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_msVTJ1UZqmtO-rMykxXBRws_5_EmYQxh7ZsTVTWeQoeh8BjRmlV7sLk&s=10" alt="StudentHub Logo" width="120">
+    <hr>
 
-<h1>StudentHub Portal</h1>
+    <nav>
+        <center>
+            <a href="home.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="register.html">Register</a>
+            <a href="login.html">Login</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="events.html">Events</a>
+            <a href="profile.html">Profile</a>
+            <a href="contact.html">Contact</a>
+            <a href="admin.html">Admin</a>
+            <a href="faq.html">FAQ</a>
+            <a href="feedback.html">Feedback</a>
+        </center>
+    </nav>
 
-<p><b>Empowering Students Through Technology</b></p>
+    <hr>
+</header>
 
-</center>
 
-<hr>
+<section class="events-header">
 
-<nav>
-
-<center>
-
-<a href="home.html">Home</a> 
-<a href="about.html">About</a> 
-<a href="register.html">Register</a> 
-<a href="login.html">Login</a> 
-<a href="dashboard.html">Dashboard</a> 
-<a href="events.html">Events</a> 
-<a href="profile.html">Profile</a> 
-<a href="contact.html">Contact</a> 
-<a href="admin.html">Admin</a> 
-<a href="faq.html">FAQ</a> 
-<a href="feedback.html">Feedback</a>
-
-</center>
-
-</nav>
-
-<hr>
-
-    <section>
     <h2>Upcoming Events</h2>
 
-    <article>
-        <h3>Tech Talk 2026</h3>
-        <p><strong>Date:</strong> 15 August 2026</p>
-        <p><strong>Time:</strong> 10:00 AM - 12:00 PM</p>
-        <p><strong>Venue:</strong> Main Auditorium</p>
-        <p><strong>Description:</strong> Learn about Artificial Intelligence, Cloud Computing, and the latest technology trends from industry experts.</p>
-    </article>
+    <p>
+        Explore coding competitions, hackathons, workshops, expert talks,
+        seminars and cultural activities happening on campus.
+    </p>
 
-    <hr>
+    <div class="event-tools">
 
-    <article>
-        <h3>Coding Competition</h3>
-        <p><strong>Date:</strong> 22 August 2026</p>
-        <p><strong>Time:</strong> 9:30 AM - 4:00 PM</p>
-        <p><strong>Venue:</strong> Computer Laboratory</p>
-        <p><strong>Description:</strong> Showcase your programming skills in C, C++, Java, and Python. Exciting prizes for winners.</p>
-    </article>
+        <input
+            type="text"
+            id="searchEvent"
+            placeholder="Search events..."
+        >
 
-    <hr>
+        <select id="categoryFilter">
+            <option value="All">All Categories</option>
+        </select>
 
-    <article>
-        <h3>Cultural Fest 2026</h3>
-        <p><strong>Date:</strong> 05 September 2026</p>
-        <p><strong>Time:</strong> 5:00 PM onwards</p>
-        <p><strong>Venue:</strong> College Campus Ground</p>
-        <p><strong>Description:</strong> Enjoy dance performances, music, drama, fashion shows, food stalls, and fun games.</p>
-    </article>
+    </div>
 
-    <hr>
-
-    <article>
-        <h3>Career Guidance Seminar</h3>
-        <p><strong>Date:</strong> 12 September 2026</p>
-        <p><strong>Time:</strong> 11:00 AM - 1:00 PM</p>
-        <p><strong>Venue:</strong> Seminar Hall</p>
-        <p><strong>Description:</strong> Learn about internships, placements, resume building, interview preparation, and career opportunities.</p>
-    </article>
-
-    <hr>
-
-    <article>
-        <h3>Hackathon 2026</h3>
-        <p><strong>Date:</strong> 20 September 2026</p>
-        <p><strong>Time:</strong> 8:00 AM - 8:00 PM</p>
-        <p><strong>Venue:</strong> Innovation Lab</p>
-        <p><strong>Description:</strong> Build innovative projects in teams, solve real-world problems, and compete for exciting prizes and certificates.</p>
-    </article>
-
-    <hr>
-
-    <article>
-        <h3>Library Orientation Program</h3>
-        <p><strong>Date:</strong> 28 September 2026</p>
-        <p><strong>Time:</strong> 2:00 PM - 3:30 PM</p>
-        <p><strong>Venue:</strong> Central Library</p>
-        <p><strong>Description:</strong> Explore library resources, digital databases, and book borrowing facilities for students.</p>
-    </article>
 </section>
+
+
+<section>
+
+    <div id="eventContainer" class="event-container"></div>
+
+</section>
+
+
+<section class="pagination">
+
+    <button id="previousBtn">Previous</button>
+
+    <span id="pageNumber">Page 1 of 2</span>
+
+    <button id="nextBtn">Next</button>
+
+</section>
+
+
+<section id="registrationSection" class="registration-section">
+
+    <h2>Event Registration</h2>
+
+    <form id="registrationForm">
+
+        <label for="studentName">Student Name</label>
+        <input
+            type="text"
+            id="studentName"
+            required
+            placeholder="Enter your full name"
+        >
+
+        <label for="studentEmail">Email Address</label>
+        <input
+            type="email"
+            id="studentEmail"
+            required
+            placeholder="Enter your email"
+        >
+
+        <label for="studentPhone">Phone Number</label>
+        <input
+            type="tel"
+            id="studentPhone"
+            required
+            placeholder="Enter your phone number"
+        >
+
+        <label for="collegeName">College Name</label>
+        <input
+            type="text"
+            id="collegeName"
+            required
+            placeholder="Enter your college name"
+        >
+
+        <label for="department">Department</label>
+
+        <select id="department" required>
+
+            <option value="">Select Department</option>
+            <option value="Computer Engineering">
+                Computer Engineering
+            </option>
+
+            <option value="Information Technology">
+                Information Technology
+            </option>
+
+            <option value="CSE">
+                Computer Science
+            </option>
+
+            <option value="ECE">
+                Electronics & Communication
+            </option>
+
+            <option value="Mechanical">
+                Mechanical Engineering
+            </option>
+
+            <option value="Civil">
+                Civil Engineering
+            </option>
+
+            <option value="Other">
+                Other
+            </option>
+
+        </select>
+
+
+        <label for="selectedEvent">Selected Event</label>
+
+        <input
+            type="text"
+            id="selectedEvent"
+            readonly
+        >
+
+
+        <label for="eventFee">Event Fee</label>
+
+        <input
+            type="text"
+            id="eventFee"
+            readonly
+        >
+
+
+        <div id="paymentBox" class="payment-box">
+
+            <h3>Payment</h3>
+
+            <p>
+                <strong>Registration Fee:</strong> ₹100
+            </p>
+
+            <div class="qr-box">
+
+                <img src="../G-PAY QR.png" alt="GPay QR Code">
+
+            </div>
+
+            <p>
+                Scan the QR code and pay exactly
+                <strong>₹100</strong>.
+            </p>
+
+            <label for="paymentReference">
+                Payment Reference / UTR Number
+            </label>
+
+            <input
+                type="text"
+                id="paymentReference"
+                placeholder="Enter payment reference number"
+            >
+
+        </div>
+
+
+        <div class="form-buttons">
+
+            <button type="submit">
+                Submit Registration
+            </button>
+
+            <button
+                type="button"
+                onclick="closeRegistration()"
+            >
+                Cancel
+            </button>
+
+        </div>
+
+    </form>
+
+</section>
+
+
+<section
+    id="registrationMessage"
+    class="registration-message"
+>
+
+    <h2>Registration Status</h2>
+
+    <p id="statusText"></p>
+
+</section>
+
+
+<footer>
+
+    <hr>
+
+    <h3>StudentHub Portal</h3>
+
+    <p>
+        Email: studenthub@charusat.ac.in
+    </p>
+
+    <p>
+        Phone: +91 98765 43210
+    </p>
+
+    <p>
+        CHARUSAT Campus, Gujarat, India
+    </p>
+
+    <p>
+        © 2026 StudentHub Portal. All Rights Reserved.
+    </p>
+
+</footer>
+
 </body>
 </html>
