@@ -1,136 +1,316 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-body{
-    font-family:Arial,sans-serif;
-    background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
-    color:white;
-    padding:20px;
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: white;
+    padding: 20px;
 }
 
-center{
-    text-align:center;
+center {
+    text-align: center;
 }
 
-img{
-    width:150px;
-    height:150px;
-    object-fit:contain;
-    border-radius:50%;
-    border:4px solid #00e5ff;
-    background:white;
+img {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    border-radius: 50%;
+    border: 4px solid #00e5ff;
+    background: white;
 }
 
-h1{
-    color:#00e5ff;
-    font-size:40px;
-    margin-bottom:10px;
+h1 {
+    color: #00e5ff;
+    font-size: 40px;
+    margin-bottom: 10px;
 }
 
-h3{
-    color:#7fe7ff;
-    margin-bottom:10px;
+h3 {
+    color: #7fe7ff;
+    margin-bottom: 10px;
 }
 
-p{
-    margin-bottom:10px;
+p {
+    margin-bottom: 10px;
 }
 
-hr{
-    margin:25px 0;
-    border:1px solid rgba(255,255,255,0.3);
+hr {
+    margin: 25px 0;
+    border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-form{
-    width:40%;
-    margin:auto;
-    background:rgba(255,255,255,0.08);
-    padding:25px;
-    border-radius:10px;
+form {
+    width: 40%;
+    margin: auto;
+    background: rgba(255, 255, 255, 0.08);
+    padding: 25px;
+    border-radius: 10px;
 }
 
-table{
-    width:100%;
+table {
+    width: 100%;
 }
 
-td{
-    padding:10px;
+td {
+    padding: 10px;
 }
 
-label{
-    font-weight:bold;
+label {
+    font-weight: bold;
 }
 
 input[type="email"],
-input[type="password"]{
-    width:100%;
-    padding:10px;
-    border:2px solid #00bcd4;
-    border-radius:5px;
-    font-size:16px;
-    outline:none;
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #00bcd4;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
 }
 
-input[type="checkbox"]{
-    margin-right:5px;
+input[type="checkbox"] {
+    margin-right: 5px;
 }
 
-button{
-    background:#00bcd4;
-    color:white;
-    border:none;
-    padding:10px 20px;
-    border-radius:5px;
-    font-size:16px;
-    margin:10px;
+button {
+    background: #00bcd4;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    margin: 10px;
+    cursor: pointer;
 }
 
-button:hover{
-    background:#0097a7;
+button:hover {
+    background: #0097a7;
 }
 
-a{
-    color:#00e5ff;
-    text-decoration:none;
+a {
+    color: #00e5ff;
+    text-decoration: none;
 }
 
-a:hover{
-    text-decoration:underline;
+a:hover {
+    text-decoration: underline;
 }
 
-small{
-    display:block;
-    margin-top:15px;
+small {
+    display: block;
+    margin-top: 15px;
 }
 
-@media(max-width:768px){
 
-form{
-    width:100%;
+/* LOGIN SUCCESS POPUP */
+
+.login-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 15, 25, 0.80);
+    z-index: 99999;
+    padding: 20px;
 }
 
-table,
-tr,
-td{
-    display:block;
-    width:100%;
+.login-success-box {
+    position: relative;
+    width: 90%;
+    max-width: 430px;
+    background: #ffffff;
+    color: #15232b;
+    border-radius: 14px;
+    padding: 45px 35px 30px;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+    animation: loginPopupShow 0.4s ease;
+    overflow: hidden;
 }
 
-button{
-    width:100%;
-    margin:10px 0;
+.login-success-box::before,
+.login-success-box::after {
+    content: "";
+    position: absolute;
+    width: 8px;
+    height: 18px;
+    border-radius: 2px;
+    top: 20px;
 }
 
-img{
-    width:120px;
-    height:120px;
+.login-success-box::before {
+    left: 35px;
+    background: #00d9ff;
+    transform: rotate(-25deg);
+    box-shadow:
+        35px 10px #ffd43b,
+        70px -5px #ff6b6b,
+        105px 12px #00d9ff;
 }
 
-h1{
-    font-size:32px;
+.login-success-box::after {
+    right: 35px;
+    background: #ffd43b;
+    transform: rotate(25deg);
+    box-shadow:
+        -35px 10px #00d9ff,
+        -70px -5px #ff6b6b,
+        -105px 12px #ffd43b;
 }
+
+.login-success-icon {
+    width: 82px;
+    height: 82px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    background: #27c98a;
+    color: white;
+    font-size: 52px;
+    font-weight: bold;
+    line-height: 82px;
+    box-shadow: 0 0 0 10px rgba(39, 201, 138, 0.12);
+    animation: loginIconShow 0.5s ease;
+}
+
+.login-success-box h2 {
+    color: #17242b;
+    font-size: 27px;
+    margin-bottom: 8px;
+}
+
+.login-success-box p {
+    color: #60727a;
+    font-size: 15px;
+    margin-bottom: 25px;
+}
+
+.login-continue-btn {
+    width: 100%;
+    padding: 13px 20px;
+    border: none;
+    border-radius: 5px;
+    background: #00a978;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.login-continue-btn:hover {
+    background: #008c65;;
+}
+.close-login-popup {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    margin: 0;
+    border: none;
+    background: transparent !important;
+    color: #15232b !important;
+    font-size: 25px;
+    cursor: pointer;
+    box-shadow: none !important;
+}
+
+.close-login-popup:hover {
+    background: transparent !important;
+    color: #15232b !important;
+    transform: none;
+    box-shadow: none !important;
+}
+
+
+@keyframes loginPopupShow {
+
+    from {
+        opacity: 0;
+        transform: scale(0.75);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+}
+
+@keyframes loginIconShow {
+
+    from {
+        transform: scale(0);
+    }
+
+    70% {
+        transform: scale(1.15);
+    }
+
+    to {
+        transform: scale(1);
+    }
+
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+
+    form {
+        width: 100%;
+    }
+
+    table,
+    tr,
+    td {
+        display: block;
+        width: 100%;
+    }
+
+    button {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    img {
+        width: 120px;
+        height: 120px;
+    }
+
+    h1 {
+        font-size: 32px;
+    }
+}
+
+
+@media (max-width: 500px) {
+
+    .login-success-box {
+        padding: 40px 22px 25px;
+    }
+
+    .login-success-icon {
+        width: 72px;
+        height: 72px;
+        line-height: 72px;
+        font-size: 44px;
+    }
+
+    .login-success-box h2 {
+        font-size: 24px;
+    }
 
 }

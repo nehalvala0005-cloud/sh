@@ -26,7 +26,7 @@
 
     <hr />
 
-    <form>
+    <form id="loginForm">
       <center>
         <p><b> Login</b></p>
 
@@ -70,9 +70,8 @@
 
           <tr>
             <td colspan="2" align="center">
-            <a href="dashboard.html" class="login-button">Login</a>
-
-              <button type="reset">Clear</button>
+           <button type="submit" class="login-button">Login</button>
+                    <button type="reset">Clear</button>    
             </td>
           </tr>
         </table>
@@ -91,5 +90,26 @@
         <p>&copy; 2026 StudentHub. All Rights Reserved.</p>
       </small>
     </center>
+    <div class="login-popup" id="loginPopup">
+
+    <div class="login-success-box">
+
+        <button class="close-login-popup" id="closeLoginPopup">&times;</button>
+
+        <div class="login-success-icon">✓</div>
+
+        <h2>Welcome Back!</h2>
+
+        <p>You have logged in successfully.</p>
+
+        <button class="login-continue-btn" id="loginContinueBtn">
+            Continue to Dashboard
+        </button>
+
+    </div>
+
+</div>
+
+    <script src="../Java Script/login.js"></script>
   </body>
 </html>
