@@ -25,7 +25,6 @@ const passwordStrength = document.getElementById("passwordStrength");
 
 
 function showError(input, errorElement, message) {
-
     errorElement.textContent = message;
 
     if (input) {
@@ -36,7 +35,6 @@ function showError(input, errorElement, message) {
 
 
 function showSuccess(input, errorElement) {
-
     errorElement.textContent = "";
 
     if (input) {
@@ -49,15 +47,14 @@ function showSuccess(input, errorElement) {
 function validateName() {
 
     const name = nameInput.value.trim();
-
-    const namePattern = /^[A-Za-z ]+$/;
+    const pattern = /^[A-Za-z ]+$/;
 
     if (name === "") {
         showError(nameInput, nameError, "Name is required.");
         return false;
     }
 
-    if (!namePattern.test(name)) {
+    if (!pattern.test(name)) {
         showError(nameInput, nameError, "Name should contain only letters.");
         return false;
     }
@@ -70,15 +67,14 @@ function validateName() {
 function validateEmail() {
 
     const email = emailInput.value.trim();
-
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     if (email === "") {
         showError(emailInput, emailError, "Email is required.");
         return false;
     }
 
-    if (!emailPattern.test(email)) {
+    if (!pattern.test(email)) {
         showError(emailInput, emailError, "Enter a valid email address.");
         return false;
     }
@@ -91,15 +87,14 @@ function validateEmail() {
 function validateMobile() {
 
     const mobile = mobileInput.value.trim();
-
-    const mobilePattern = /^[0-9]{10}$/;
+    const pattern = /^[0-9]{10}$/;
 
     if (mobile === "") {
         showError(mobileInput, mobileError, "Mobile number is required.");
         return false;
     }
 
-    if (!mobilePattern.test(mobile)) {
+    if (!pattern.test(mobile)) {
         showError(mobileInput, mobileError, "Enter exactly 10 digits.");
         return false;
     }
@@ -115,13 +110,17 @@ function validatePassword() {
 
     if (password === "") {
         showError(passwordInput, passwordError, "Password is required.");
-        passwordStrength.textContent = "";
+
+        if (passwordStrength) {
+            passwordStrength.textContent = "";
+        }
+
         return false;
     }
 
-    const hasUppercase = /[A-Z]/.test(password);
-    const hasLowercase = /[a-z]/.test(password);
-    const hasNumber = /[0-9]/.test(password);
+    const uppercase = /[A-Z]/.test(password);
+    const lowercase = /[a-z]/.test(password);
+    const number = /[0-9]/.test(password);
 
     if (password.length < 8) {
 
@@ -131,13 +130,15 @@ function validatePassword() {
             "Password must contain at least 8 characters."
         );
 
-        passwordStrength.textContent = "Weak password";
-        passwordStrength.style.color = "#ff6b6b";
+        if (passwordStrength) {
+            passwordStrength.textContent = "Weak password";
+            passwordStrength.style.color = "#ff6b6b";
+        }
 
         return false;
     }
 
-    if (!hasUppercase || !hasLowercase || !hasNumber) {
+    if (!uppercase || !lowercase || !number) {
 
         showError(
             passwordInput,
@@ -145,16 +146,20 @@ function validatePassword() {
             "Use uppercase, lowercase and a number."
         );
 
-        passwordStrength.textContent = "Medium password";
-        passwordStrength.style.color = "#ffd43b";
+        if (passwordStrength) {
+            passwordStrength.textContent = "Medium password";
+            passwordStrength.style.color = "#ffd43b";
+        }
 
         return false;
     }
 
     showSuccess(passwordInput, passwordError);
 
-    passwordStrength.textContent = "Strong password";
-    passwordStrength.style.color = "#27c98a";
+    if (passwordStrength) {
+        passwordStrength.textContent = "Strong password";
+        passwordStrength.style.color = "#27c98a";
+    }
 
     return true;
 }
@@ -166,7 +171,6 @@ function validateConfirmPassword() {
     const confirmPassword = confirmInput.value;
 
     if (confirmPassword === "") {
-
         showError(
             confirmInput,
             confirmError,
@@ -177,7 +181,6 @@ function validateConfirmPassword() {
     }
 
     if (password !== confirmPassword) {
-
         showError(
             confirmInput,
             confirmError,
@@ -214,7 +217,6 @@ function validateCourse() {
         courseInput.value === "" ||
         courseInput.value === "Select Course"
     ) {
-
         courseError.textContent = "Please select a course.";
         return false;
     }
@@ -231,7 +233,6 @@ function validateTerms() {
     );
 
     if (!terms.checked) {
-
         termsError.textContent =
             "You must accept the Terms & Conditions.";
 
@@ -244,9 +245,7 @@ function validateTerms() {
 
 
 nameInput.addEventListener("input", validateName);
-
 emailInput.addEventListener("input", validateEmail);
-
 mobileInput.addEventListener("input", validateMobile);
 
 passwordInput.addEventListener("input", function () {
@@ -260,8 +259,8 @@ passwordInput.addEventListener("input", function () {
 });
 
 confirmInput.addEventListener("input", validateConfirmPassword);
-
 courseInput.addEventListener("change", validateCourse);
+
 
 document.querySelectorAll('input[name="gender"]').forEach(function (radio) {
 
@@ -315,11 +314,9 @@ function playSuccessSound() {
         new (window.AudioContext || window.webkitAudioContext)();
 
     const oscillator = audioContext.createOscillator();
-
     const gainNode = audioContext.createGain();
 
     oscillator.connect(gainNode);
-
     gainNode.connect(audioContext.destination);
 
     oscillator.type = "sine";
@@ -358,14 +355,10 @@ function playSuccessSound() {
 
 
 closePopup.addEventListener("click", function () {
-
     successPopup.style.display = "none";
-
 });
 
 
 continueBtn.addEventListener("click", function () {
-
     window.location.href = "login.html";
-
 });
