@@ -1,0 +1,53 @@
+*{box-sizing:border-box}
+
+.site-toolbar{position:fixed;right:18px;top:18px;z-index:9999;display:flex;gap:8px}
+.theme-toggle,.mobile-menu-btn{border:1px solid rgba(0,229,255,.45);background:rgba(5,25,32,.88);color:#fff;padding:9px 13px;border-radius:8px;cursor:pointer;font-weight:bold;backdrop-filter:blur(8px)}
+.theme-toggle:hover,.mobile-menu-btn:hover{background:#00bcd4;color:#102a32}
+.mobile-menu-btn{display:none}
+nav .nav-links{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:4px;width:100%}
+nav .nav-links a{transition:.25s}
+
+.notification-banner{position:relative;margin:18px auto;padding:14px 48px 14px 18px;max-width:1000px;background:rgba(0,188,212,.14);border:1px solid rgba(0,229,255,.35);border-radius:10px;color:#eaffff;font-weight:bold}
+.notification-banner button{position:absolute;right:10px;top:8px;background:transparent;border:0;color:#fff;font-size:22px;cursor:pointer}
+
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.72);display:none;align-items:center;justify-content:center;padding:20px;z-index:10000}
+.modal-overlay.show{display:flex}
+.modal-box{width:min(650px,100%);max-height:85vh;overflow:auto;background:#17343d;color:#fff;border:1px solid rgba(0,229,255,.35);border-radius:14px;padding:26px;box-shadow:0 20px 60px rgba(0,0,0,.45)}
+.modal-box h2{color:#7fe7ff;margin-bottom:12px}
+.modal-close{float:right;border:0;background:transparent;color:#fff;font-size:26px;cursor:pointer}
+
+.light-theme{background:#eefafd!important;color:#18333b!important}
+.light-theme header,.light-theme section,.light-theme main,.light-theme footer,.light-theme form,.light-theme article{color:#18333b}
+.light-theme nav{background:rgba(255,255,255,.8)}
+.light-theme nav a{color:#fff}
+.light-theme .theme-toggle,.light-theme .mobile-menu-btn{background:#fff;color:#12343d}
+.light-theme .notification-banner{background:#fff;border-color:#9bdde8;color:#16424d}
+.light-theme .modal-box{background:#fff;color:#18333b}
+.light-theme .modal-close{color:#18333b}
+
+.accordion-item{border:1px solid rgba(0,229,255,.25);border-radius:10px;margin:12px 0;overflow:hidden;background:rgba(255,255,255,.06)}
+.accordion-question{width:100%;text-align:left;border:0;background:transparent;color:#fff;padding:16px 18px;font-size:17px;font-weight:bold;cursor:pointer}
+.accordion-question:hover{background:rgba(0,188,212,.12)}
+.accordion-answer{display:none;padding:0 18px 16px;color:#d8f7fc}
+.accordion-item.open .accordion-answer{display:block}
+.accordion-item.open .accordion-question{color:#00e5ff}
+
+.field-error{display:block;min-height:20px;color:#ff9b9b;font-size:13px;margin-top:4px;font-weight:bold}
+.input-invalid{border-color:#ff6b6b!important;box-shadow:0 0 0 2px rgba(255,107,107,.12)!important}
+.input-valid{border-color:#49e68a!important}
+.password-strength{margin-top:6px;font-size:13px;font-weight:bold}
+
+.loading-message,.error-message{text-align:center;padding:20px;font-weight:bold}
+.error-message{color:#ffb4b4}
+.sort-select{min-width:180px}
+.view-details-btn{width:100%;margin-top:8px;padding:9px;border:1px solid #00bcd4;border-radius:7px;background:transparent;color:#7fe7ff;font-weight:bold;cursor:pointer}
+.view-details-btn:hover{background:#00bcd4;color:#102a32}
+
+@media(max-width:768px){
+    .site-toolbar{right:10px;top:10px}
+    .theme-toggle{padding:8px 10px}
+    .mobile-menu-btn{display:block;margin:0 auto 8px}
+    nav .nav-links{display:none;flex-direction:column;width:100%;gap:6px}
+    nav .nav-links.is-open{display:flex}
+    nav .nav-links a{width:100%!important;text-align:center!important;margin:0!important}
+}
