@@ -318,3 +318,25 @@ small {
         font-size: 24px;
     }
 }
+.error-message {
+    display: block;
+    color: #ff6b6b;
+    font-size: 13px;
+    font-weight: bold;
+    margin-top: 4px;
+}
+
+.input-error {
+    border-color: #ff6b6b !important;
+}
+
+.input-success {
+    border-color: #27c98a !important;
+}
+
+.password-strength {
+    display: block;
+    font-size: 13px;
+    font-weight: bold;
+    margin-top: 4px;
+}

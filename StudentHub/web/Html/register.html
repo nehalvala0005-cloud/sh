@@ -40,6 +40,7 @@
                 placeholder="Enter Full Name"
                 required
               />
+              <span class="error-message" id="nameError"></span>
             </td>
           </tr>
 
@@ -52,32 +53,36 @@
                 placeholder="Enter Email"
                 required
               />
+              <span class="error-message" id="emailError"></span>
             </td>
           </tr>
 
-          <tr>
-            <td><label for="mobile">Mobile</label></td>
-            <td>
-              <input
-                type="tel"
-                id="mobile"
-                placeholder="Enter Mobile Number"
-                required
-              />
-            </td>
-          </tr>
+         <tr>
+    <td><label for="mobile">Mobile</label></td>
+    <td>
+        <input
+            type="tel"
+            id="mobile"
+            placeholder="Enter Mobile Number"
+            required
+        />
+        <span class="error-message" id="mobileError"></span>
+    </td>
+</tr>
 
-          <tr>
-            <td><label for="password">Password</label></td>
-            <td>
-              <input
-                type="password"
-                id="password"
-                placeholder="Enter Password"
-                required
-              />
-            </td>
-          </tr>
+        <tr>
+    <td><label for="password">Password</label></td>
+    <td>
+        <input
+            type="password"
+            id="password"
+            placeholder="Enter Password"
+            required
+        />
+        <span class="password-strength" id="passwordStrength"></span>
+        <span class="error-message" id="passwordError"></span>
+    </td>
+</tr>
 
           <tr>
             <td><label for="confirm">Confirm Password</label></td>
@@ -88,6 +93,7 @@
                 placeholder="Confirm Password"
                 required
               />
+              <span class="error-message" id="confirmError"></span>
             </td>
           </tr>
 
@@ -99,6 +105,7 @@
           <tr>
             <td>Gender</td>
             <td>
+              <span class="error-message" id="genderError"></span>
               <input type="radio" name="gender" id="male" />
               <label for="male">Male</label>
 
@@ -113,6 +120,7 @@
           <tr>
             <td><label for="course">Course</label></td>
             <td>
+              <span class="error-message" id="courseError"></span>
               <select id="course">
                 <option>Select Course</option>
                 <option>B.Tech CSE</option>
@@ -146,6 +154,7 @@
             <td colspan="2" align="center">
               <input type="checkbox" required />
               I agree to the Terms & Conditions
+                <span class="error-message" id="termsError"></span>
             </td>
           </tr>
 

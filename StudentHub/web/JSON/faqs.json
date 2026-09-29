@@ -1,0 +1,77 @@
+[
+    {
+        "id": 1,
+        "question": "How do I register on StudentHub?",
+        "answer": "Open the Register page, enter your details, accept the terms and submit the form."
+    },
+    {
+        "id": 2,
+        "question": "How do I login?",
+        "answer": "Open the Login page and enter your registered email and password."
+    },
+    {
+        "id": 3,
+        "question": "Can I edit my profile?",
+        "answer": "Yes. Open the Profile page and use the Edit Profile option."
+    },
+    {
+        "id": 4,
+        "question": "How can I check my attendance?",
+        "answer": "Open your Dashboard and check the Attendance section."
+    },
+    {
+        "id": 5,
+        "question": "Where can I see upcoming events?",
+        "answer": "Open the Events page to search, filter and browse upcoming events."
+    },
+    {
+        "id": 6,
+        "question": "How do I register for an event?",
+        "answer": "Select an event on the Events page and click Register."
+    },
+    {
+        "id": 7,
+        "question": "Can I search for a particular event?",
+        "answer": "Yes. Use the event search box to search by title, category, venue or description."
+    },
+    {
+        "id": 8,
+        "question": "Can I filter events by category?",
+        "answer": "Yes. Select a category from the category filter on the Events page."
+    },
+    {
+        "id": 9,
+        "question": "Can I sort events?",
+        "answer": "Yes. The Events page provides sorting options for title and fee."
+    },
+    {
+        "id": 10,
+        "question": "How can I contact StudentHub?",
+        "answer": "Use the Contact page or email studenthub@gmail.com."
+    },
+    {
+        "id": 11,
+        "question": "How can I submit feedback?",
+        "answer": "Open the Feedback page and submit your feedback through the form."
+    },
+    {
+        "id": 12,
+        "question": "Can I use StudentHub on mobile?",
+        "answer": "Yes. The interface includes responsive layouts and a mobile navigation menu."
+    },
+    {
+        "id": 13,
+        "question": "Does StudentHub support dark and light themes?",
+        "answer": "Yes. Use the theme button to switch themes. Your choice can be saved in localStorage."
+    },
+    {
+        "id": 14,
+        "question": "What should I do if events fail to load?",
+        "answer": "Check your connection and reload the page. StudentHub also displays an error message when JSON loading fails."
+    },
+    {
+        "id": 15,
+        "question": "What should I do if I forget my password?",
+        "answer": "Contact the administrator or use the password recovery option when it is available."
+    }
+]
