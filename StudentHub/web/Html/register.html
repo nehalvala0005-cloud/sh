@@ -26,7 +26,7 @@
 
     <hr />
 
-    <form id="registrationForm">
+    <form id="registrationForm" method="POST" action="../php/register.php">
       <center>
         <p><b>Registration Form</b></p>
 
@@ -37,6 +37,7 @@
               <input
                 type="text"
                 id="name"
+                name="name"
                 placeholder="Enter Full Name"
                 required
               />
@@ -50,6 +51,7 @@
               <input
                 type="email"
                 id="email"
+                name="email"
                 placeholder="Enter Email"
                 required
               />
@@ -57,32 +59,34 @@
             </td>
           </tr>
 
-         <tr>
-    <td><label for="mobile">Mobile</label></td>
-    <td>
-        <input
-            type="tel"
-            id="mobile"
-            placeholder="Enter Mobile Number"
-            required
-        />
-        <span class="error-message" id="mobileError"></span>
-    </td>
-</tr>
+          <tr>
+            <td><label for="mobile">Mobile</label></td>
+            <td>
+              <input
+                type="tel"
+                id="mobile"
+                name="mobile"
+                placeholder="Enter Mobile Number"
+                required
+              />
+              <span class="error-message" id="mobileError"></span>
+            </td>
+          </tr>
 
-        <tr>
-    <td><label for="password">Password</label></td>
-    <td>
-        <input
-            type="password"
-            id="password"
-            placeholder="Enter Password"
-            required
-        />
-        <span class="password-strength" id="passwordStrength"></span>
-        <span class="error-message" id="passwordError"></span>
-    </td>
-</tr>
+          <tr>
+            <td><label for="password">Password</label></td>
+            <td>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="Enter Password"
+                required
+              />
+              <span class="password-strength" id="passwordStrength"></span>
+              <span class="error-message" id="passwordError"></span>
+            </td>
+          </tr>
 
           <tr>
             <td><label for="confirm">Confirm Password</label></td>
@@ -90,6 +94,7 @@
               <input
                 type="password"
                 id="confirm"
+                name="confirmPassword"
                 placeholder="Confirm Password"
                 required
               />
@@ -99,7 +104,7 @@
 
           <tr>
             <td><label for="dob">Date of Birth</label></td>
-            <td><input type="date" id="dob" required /></td>
+            <td><input type="date" id="dob" name="dob" required /></td>
           </tr>
 
           <tr>
@@ -121,11 +126,11 @@
             <td><label for="course">Course</label></td>
             <td>
               <span class="error-message" id="courseError"></span>
-              <select id="course">
-                <option>Select Course</option>
-                <option>B.Tech CSE</option>
-                <option>B.Tech CE</option>
-                <option>B.Tech IT</option>
+              <select id="course" name="course">
+                <option value="">Select Course</option>
+                <option value="B.Tech CSE">B.Tech CSE</option>
+                <option value="B.Tech CE">B.Tech CE</option>
+                <option value="B.Tech IT">B.Tech IT</option>
               </select>
             </td>
           </tr>
@@ -143,6 +148,7 @@
             <td>
               <textarea
                 id="address"
+                name="address"
                 rows="3"
                 cols="25"
                 placeholder="Enter Your Address"
@@ -152,19 +158,22 @@
 
           <tr>
             <td colspan="2" align="center">
-              <input type="checkbox" required />
+              <input
+                type="checkbox"
+                id="terms"
+                name="terms"
+                value="accepted"
+                required
+              />
               I agree to the Terms & Conditions
-                <span class="error-message" id="termsError"></span>
+              <span class="error-message" id="termsError"></span>
             </td>
           </tr>
 
           <tr>
             <td colspan="2" align="center">
-             <button type="submit" class="register-button">Register</button>
+              <button type="submit" class="register-button">Register</button>
               <button type="reset">Clear</button>
-              
-               
-              
             </td>
           </tr>
         </table>
@@ -178,9 +187,7 @@
     </center>
 
     <div class="success-popup" id="successPopup">
-
-    <div class="success-box">
-
+      <div class="success-box">
         <button class="close-popup" id="closePopup">&times;</button>
 
         <div class="success-icon">✓</div>
@@ -189,13 +196,9 @@
 
         <p>You are registered successfully.</p>
 
-        <button class="continue-btn" id="continueBtn">
-            Continue to Login
-        </button>
-
+        <button class="continue-btn" id="continueBtn">Continue to Login</button>
+      </div>
     </div>
-
-</div>
 
     <script src="../Java Script/register.js"></script>
   </body>
